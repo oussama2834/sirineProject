@@ -1,0 +1,50 @@
+
+  <div class="content container-fluid">
+<div class="page-header mt-4">
+  <div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-8">
+  <h5 class="text-uppercase mb-0 mt-0 page-title">Employees</h5>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+  <ul class="breadcrumb float-right p-0 mb-0">
+  <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i> Menu</a></li>
+  <li class="breadcrumb-item"><a href="#">Employees</a></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+<div class="row" >
+  <div class="col-md-12 mb-3">
+<div  class="table-responsive">
+<table class="table custom-table datatable" >
+  <thead  class="thead-light">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email </th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-success mr-2">
+          <i class="far fa-edit"></i></button>
+          <button (click)="employeeDetails(employee.id)"
+          class="btn btn-info mr-2">
+          <i class="fas fa-eye"></i></button>
+        <button (click)="deleteEmployee(employee.id)" type="button"
+        class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
